@@ -54,7 +54,7 @@ public final class RdpPassSaver {
 		jPanel1.setLayout(new java.awt.GridLayout(0, 1));
 
 		final JLabel jLabel3 = new JLabel(
-				"Введите пароль и выберите файл для сохранения");
+				"Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ Рё РІС‹Р±РµСЂРёС‚Рµ С„Р°Р№Р» РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ");
 		jPanel1.add(jLabel3);
 		// jPanel1.add(blankSpace);
 
@@ -63,18 +63,18 @@ public final class RdpPassSaver {
 
 		password = new JPasswordField();
 
-		final JButton choose = new JButton("Выбрать");
+		final JButton choose = new JButton("Р’С‹Р±СЂР°С‚СЊ");
 		choose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (password.getText().trim().isEmpty()) {
-					ShowMsg("Введите пароль для сохранения");
+					ShowMsg("Р’РІРµРґРёС‚Рµ РїР°СЂРѕР»СЊ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ");
 					return;
 				}
 				final JFileChooser fc = new JFileChooser(".");
 				final FileNameExtensionFilter filter = new FileNameExtensionFilter(
 						"RDP FILES", "rdp");
 				fc.setFileFilter(filter);
-				fc.setDialogTitle("Выберите файл для сохранения пароля для rdp");
+				fc.setDialogTitle("Р’С‹Р±РµСЂРёС‚Рµ С„Р°Р№Р» РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РїР°СЂРѕР»СЏ РґР»СЏ rdp");
 				fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
 				// In response to a button click:
 				final int returnVal = fc.showOpenDialog(frame);
@@ -124,8 +124,8 @@ public final class RdpPassSaver {
 
 			new File(result).renameTo(new File(rdpFile));
 
-			ShowMsg("Пароль успешно сохранен в файле " + rdpFile
-					+ "\n Старый файл сохранен в " + tmpFile.getAbsolutePath());
+			ShowMsg("РџР°СЂРѕР»СЊ СѓСЃРїРµС€РЅРѕ СЃРѕС…СЂР°РЅРµРЅ РІ С„Р°Р№Р»Рµ " + rdpFile
+					+ "\n РЎС‚Р°СЂС‹Р№ С„Р°Р№Р» СЃРѕС…СЂР°РЅРµРЅ РІ " + tmpFile.getAbsolutePath());
 		} catch (IOException e) {
 			ShowMsg(e.getLocalizedMessage());
 			// TODO Auto-generated catch block
